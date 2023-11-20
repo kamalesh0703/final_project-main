@@ -2,8 +2,6 @@ import { useEffect, useState } from "react";
 import "./searchItem.css";
 import { useLocation } from "react-router-dom";
 import { Link } from 'react-router-dom';
-import { getTime } from "date-fns";
-
 const SearchItem = ({item}) => {
   const location = useLocation();
   console.log(location.state)

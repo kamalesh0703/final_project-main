@@ -24,7 +24,7 @@ const List = () => {
 
   const getHotels = async () => {
     console.log(destination)
-    let resp = await fetch(`http://localhost:5500/Hotel/getHotels?city=${destination}&min=${min}&max=${max}`);
+    let resp = await fetch(`http://localhost:5500/Hotel/getAllHotels?city=${destination}&min=${min}&max=${max}`);
     let result = await resp.json();
     setHotels(result); 
     handlequerys()
@@ -113,7 +113,7 @@ const List = () => {
             <button onClick={()=>getHotels()}>Search</button>
           </div>
           <div className="listResult">
-            {loading ? "Loading":<>{hotels.map((item)=>{
+            {loading ? "Loading":<>{hotels?.map((item)=>{
               return(
                 <SearchItem item={item} key={item?._id}/>
               )
